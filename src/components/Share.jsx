@@ -1,31 +1,26 @@
 export default function Share() {
-  const message = encodeURIComponent(
-    "🌳 Main #SaveAravalli ke saath hoon.\n" +
-    "Aravalli humara paani, hawa aur bhavishya hai.\n\n" +
-    "Aap bhi join karein:\n" +
-    "👉 http://localhost:5173\n\n" +
-    "#AravalliBachao"
-  );
+  const shareOnWhatsApp = () => {
+    const text = encodeURIComponent(
+      "🌳 Save Aravalli 🌳\n\n" +
+      "Aravalli sirf pahad nahi,\n" +
+      "ye Rajasthan ka pani aur jungle hai.\n\n" +
+      "✍️ Petition sign karein:\n" +
+      "http://localhost:5173"
+    );
+
+    window.open(`https://wa.me/?text=${text}`, "_blank");
+  };
 
   return (
-    <section className="bg-green-800 py-16 px-6 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-black">
-        📢 Awaaz Phailaiye
-      </h2>
+    <section className="py-20 bg-green-800 text-white text-center">
+      <h2 className="text-3xl font-bold mb-4">📣 Awaaz Phailaiye</h2>
 
-      <p className="mt-4 text-lg text-black">
-        Agar aap Aravalli ke saath hain,  
-        to is message ko aage badhaiye.
-      </p>
-
-      <a
-        href={`https://wa.me/?text=${message}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block mt-8 bg-black text-green-400 px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition"
+      <button
+        onClick={shareOnWhatsApp}
+        className="bg-black px-6 py-3 rounded text-green-400 font-semibold"
       >
         📲 WhatsApp par Share Karein
-      </a>
+      </button>
     </section>
   );
 }

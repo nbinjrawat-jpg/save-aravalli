@@ -2,6 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-black text-white;
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.9;
+  }
+}
+
+.animate-fall {
+  top: -10%;
+  animation: fall 3.5s linear forwards;
+}
+@keyframes fall {
+  from {
+    transform: translateY(-10vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(110vh);
+    opacity: 0.9;
+  }
+}
+
+.animate-fall {
+  top: -10%;
+  animation: fall 3.5s linear forwards;
+}
+@keyframes blastUp {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-blast {
+  bottom: 20%;
+  animation: blastUp 2.8s ease-out forwards;
 }

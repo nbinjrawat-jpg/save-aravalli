@@ -1,19 +1,28 @@
-import Hero from "./components/Hero";
-import Counter from "./components/Counter";
-import WhyAravalli from "./components/WhyAravalli";
-import Petition from "./components/Petition";
-import Share from "./components/Share";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
-function App() {
+import Home from "./pages/Home";
+import About from "./pages/About";
+import PetitionPage from "./pages/PetitionPage";
+import ThankYou from "./pages/ThankYou";
+import JagoBharat from "./pages/JagoBharat";
+import AravalliHistory from "./pages/AravalliHistory";
+
+export default function App() {
   return (
-    <>
-      <Hero />
-      <Counter />
-      <WhyAravalli />
-      <Petition />
-      <Share />
-    </>
+    <div className="min-h-screen bg-white">
+      <Navbar />
+
+      <main className="pt-16">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/petition" element={<PetitionPage />} />
+          <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/jago-bharat" element={<JagoBharat />} />
+          <Route path="/aravalli-history" element={<AravalliHistory />} />
+        </Routes>
+      </main>
+    </div>
   );
 }
-
-export default App;
