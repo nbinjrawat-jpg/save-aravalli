@@ -1,26 +1,24 @@
 export default function Share() {
   const shareOnWhatsApp = () => {
-    const text = encodeURIComponent(
-      "🌳 Save Aravalli 🌳\n\n" +
-      "Aravalli sirf pahad nahi,\n" +
-      "ye Rajasthan ka pani aur jungle hai.\n\n" +
-      "✍️ Petition sign karein:\n" +
-      "http://localhost:5173"
-    );
+    const url = encodeURIComponent("https://save-aravalli.vercel.app");
+    const text = encodeURIComponent("🌳 अरावली बचाओ! अभी इस मुहिम से जुड़ें:");
+    const whatsappLink = `https://wa.me/?text=${text}%20${url}`;
 
-    window.open(`https://wa.me/?text=${text}`, "_blank");
+    window.open(whatsappLink, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <section className="py-20 bg-green-800 text-white text-center">
-      <h2 className="text-3xl font-bold mb-4">📣 Awaaz Phailaiye</h2>
-
+    <div className="text-center my-10">
       <button
         onClick={shareOnWhatsApp}
-        className="bg-black px-6 py-3 rounded text-green-400 font-semibold"
+        className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold shadow transition"
       >
-        📲 WhatsApp par Share Karein
+        📤 WhatsApp par Share karein
       </button>
-    </section>
+
+      <p className="text-xs text-gray-500 mt-2">
+        📱 Mobile → WhatsApp App | 💻 Desktop → WhatsApp Web
+      </p>
+    </div>
   );
 }
