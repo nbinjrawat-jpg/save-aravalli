@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Counter from "../components/Counter";
 import WhyAravalli from "../components/WhyAravalli";
 
 export default function Home() {
@@ -64,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* BELOW SECTIONS */}
-      <Counter />
+
       <WhyAravalli />
     </>
   );
